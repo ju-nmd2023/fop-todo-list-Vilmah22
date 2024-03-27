@@ -1,0 +1,55 @@
+#titletext {
+  font-size: 35pt;
+  font-family: "Madimi One", sans-serif;
+  color: #f03060;
+  margin-left: 41%;
+  display: inline;
+}
+
+#lineheader {
+  border: solid;
+  color: black;
+  border-top: 1px;
+  color: #249be0;
+}
+
+#verticalline {
+  border: solid;
+  color: black;
+  border-top: 1px;
+  margin-right: 60rem;
+  transform: rotate(90deg);
+  color: #f03060;
+}
+
+#writeATask {
+  padding: 10px;
+  border: 1px solid;
+  border-radius: 10px;
+  border-color: #f03060;
+}
+
+#taskConfirm {
+  padding: 10px;
+  margin-left: 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  background-color: #249be0;
+  color: white;
+  width: 40px;
+}
+
+#taskConfirm:hover {
+  opacity: 0.6;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+#lightbulb {
+  width: 3rem;
+}
