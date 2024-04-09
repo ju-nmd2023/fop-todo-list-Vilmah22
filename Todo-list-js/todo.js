@@ -10,7 +10,11 @@ window.addEventListener("load", () => {
 
 function addTask() {
   let inputFieldText = inputElement.value;
-  let task = { taskName: inputFieldText };
+  let task = {
+    taskName: inputFieldText,
+    done: "images/doodlecheckmark (1).jpeg",
+    remove: "images/doodlecheckmark (2).jpeg",
+  };
   tasks.push(task);
   showTasks();
   inputElement.value = "";
@@ -25,7 +29,19 @@ function showTasks() {
 
     addUlItem.appendChild(liTaskElement);
 
-    tasks.addEventListener = 
+    const imgElement = document.createElement("img");
+    imgElement.classList.add(".imagechecked");
+    imgElement.src = tasks[i].done;
+    imgElement.height = 40;
+    addUlItem.appendChild(imgElement);
+
+    const imgElement2 = document.createElement("img");
+    imgElement.classList.add(".imageremove");
+    imgElement2.src = tasks[i].remove;
+    imgElement2.height = 40;
+    addUlItem.appendChild(imgElement2);
+
+    // tasks.addEventListener =
   }
 }
 

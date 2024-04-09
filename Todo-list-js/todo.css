@@ -70,16 +70,16 @@
   width: 3rem;
 }
 
-.checkimg {
-  height: 1.5rem;
-}
-
-.removeimg {
-  height: 1.5rem;
-}
-
 #list-container {
   margin-left: 32rem;
   list-style: none;
   font-family: sans-serif;
+}
+
+.imagechecked {
+  height: 1rem;
+}
+
+.imageremoved {
+  height: 1rem;
 }
