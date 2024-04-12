@@ -12,8 +12,8 @@ function addTask() {
   let inputFieldText = inputElement.value;
   let task = {
     taskName: inputFieldText,
-    done: "images/doodlecheckmark (1).jpeg",
-    remove: "images/doodlecheckmark (2).jpeg",
+    done: "checked.jpeg",
+    remove: "remove.jpeg",
   };
   tasks.push(task);
   showTasks();
@@ -35,33 +35,24 @@ function showTasks() {
     imgElement.height = 40;
     addUlItem.appendChild(imgElement);
 
+    imgElement.addEventListener("click", function () {
+      liTaskElement.style.textDecoration = "line-through";
+    });
+    addUlItem.appendChild(imgElement);
+
     const imgElement2 = document.createElement("img");
-    imgElement.classList.add(".imageremove");
+    imgElement2.classList.add(".imageremove");
     imgElement2.src = tasks[i].remove;
     imgElement2.height = 40;
     addUlItem.appendChild(imgElement2);
 
-    // tasks.addEventListener =
+    let index = i;
+
+    imgElement2.addEventListener("click", function () {
+      tasks.splice(index, 1);
+      showTasks();
+    });
   }
 }
 
-// function addToListButton() {
-//   console.log("Button clicked");
-
-//   //   inputElement.addEventListener("click", function (inputEvent) {
-//   const inputValue = inputElement.value;
-//   if (inputValue !== "") {
-//     createTask(inputValue);
-//     inputElement.value = "";
-
-//     //   createTask(inputValue);
-
-//     //   inputElement.value = "";
-//   } else {
-//     window.alert("Enter Text");
-//   }
-// }
-
-// function createTask(taskText) {
-//   console.log("Creating task", taskText);
-// }
+localStorage.setItem(JSON.stringify(tasks));
