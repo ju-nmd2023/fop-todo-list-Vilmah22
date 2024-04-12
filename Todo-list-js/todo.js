@@ -12,8 +12,8 @@ function addTask() {
   let inputFieldText = inputElement.value;
   let task = {
     taskName: inputFieldText,
-    done: "checked.jpeg",
-    remove: "remove.jpeg",
+    done: "images/checked.jpeg",
+    remove: "images/remove.jpeg",
   };
   tasks.push(task);
   showTasks();
@@ -55,4 +55,8 @@ function showTasks() {
   }
 }
 
-localStorage.setItem(JSON.stringify(tasks));
+// function add {
+//   itemsArray.push(input.value)
+
+// }
+// localStorage
