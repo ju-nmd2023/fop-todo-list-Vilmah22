@@ -64,6 +64,7 @@ function showTasks() {
     imgElement2.height = 40;
     addUlItem.appendChild(imgElement2);
 
+    // this line of code was retrieved from Garrit
     let index = i;
 
     imgElement2.addEventListener("click", function () {
