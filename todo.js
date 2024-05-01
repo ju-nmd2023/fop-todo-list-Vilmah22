@@ -32,6 +32,7 @@ function addTask() {
   localStorage.setItem("tasks", JSON.stringify(tasks));
   //
   showTasks();
+  saveItem();
   inputElement.value = "";
 }
 
@@ -51,10 +52,17 @@ function showTasks() {
     imgElement.height = 40;
     addUlItem.appendChild(imgElement);
 
+    if (task.statusIsChecked === true) {
+      liTaskElement.style.textDecoration = "line-through";
+    }
     imgElement.addEventListener("click", function () {
       liTaskElement.style.textDecoration = "line-through";
       task.statusIsChecked = true;
-      localStorage.setItem("tasks", JSON.stringify(tasks));
+      if (task.statusIsChecked === true) {
+        liTaskElement.style.textDecoration = "line-through";
+        saveItem();
+        showTasks();
+      }
     });
     addUlItem.appendChild(imgElement);
 
@@ -70,6 +78,11 @@ function showTasks() {
     imgElement2.addEventListener("click", function () {
       tasks.splice(index, 1);
       showTasks();
+      saveItem();
     });
   }
+}
+
+function saveItem() {
+  localStorage.setItem("tasks", JSON.stringify(tasks));
 }
